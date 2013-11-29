@@ -16,6 +16,7 @@ namespace Microsoft.Maps
         public bool Draggable;
         public double Height;
         public String Icon;
+        public String HtmlContent;
         public String Text;
         public Point TextOffset;
         public String TypeName;
