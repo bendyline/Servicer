@@ -39,7 +39,7 @@ namespace Microsoft.Maps
             ;
         }
 
-        public void SetOptions(PolygonOptions options)
+        public void SetOptions(PolylineOptions options)
         {
             ;
         }
