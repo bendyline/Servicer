@@ -16,7 +16,7 @@
     <GenerateResources>True</GenerateResources>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>..\..\web\gs\Servicer\Maps\MapBox\dbg\</OutputPath>
+    <OutputPath>..\..\web\gs\Servicer\Maps\Mapbox\dbg\</OutputPath>
     <DefineConstants>DEBUG;CODE_ANALYSIS;SCRIPTSHARP</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -39,6 +39,7 @@
     <None Include="Properties\Script.template" />
     <Compile Include="Native\Mapbox.cs" />
     <Compile Include="Native\MapboxMapOptions.cs" />
+    <Compile Include="Placeholder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
