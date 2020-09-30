@@ -8,6 +8,7 @@
     <ProjectGuid>{09C5607F-BBE1-4CDE-A2C8-3D9CC44A32BB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
+    <DisableHandlePackageFileConflicts>true</DisableHandlePackageFileConflicts>
     <RootNamespace>BL.Servicer.MapBox</RootNamespace>
     <AssemblyName>bl.serv.mapbox</AssemblyName>
     <ScriptTemplate>Properties\Script.template</ScriptTemplate>

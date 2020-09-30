@@ -8,6 +8,7 @@
     <ProjectGuid>{8DE98D1B-8243-4E9D-90E0-F9A16ACFB496}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
+    <DisableHandlePackageFileConflicts>true</DisableHandlePackageFileConflicts>
     <RootNamespace>BL.Servicer.Leaflet</RootNamespace>
     <AssemblyName>bl.serv.leaflet</AssemblyName>
     <ScriptTemplate>Properties\Script.template</ScriptTemplate>
