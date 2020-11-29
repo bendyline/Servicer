@@ -14,12 +14,12 @@ namespace Microsoft.Graph
     [Imported]
     [IgnoreNamespace]
     [ScriptName("Object")]
-    public partial class Identity
+    public partial class IdentityObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Identity"/> class.
         /// </summary>
-        public Identity()
+        public IdentityObject()
         {
             this.ODataType = "microsoft.graph.identity";
         }

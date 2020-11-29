@@ -46,7 +46,7 @@
     <Compile Include="MicrosoftGraph\FieldValueSet.cs" />
     <Compile Include="MicrosoftGraph\Group.cs" />
     <Compile Include="MicrosoftGraph\GroupType.cs" />
-    <Compile Include="MicrosoftGraph\Identity.cs" />
+    <Compile Include="MicrosoftGraph\IdentityObject.cs" />
     <Compile Include="MicrosoftGraph\IdentitySet.cs" />
     <Compile Include="MicrosoftGraph\ItemReference.cs" />
     <Compile Include="MicrosoftGraph\LicenseProcessingState.cs" />

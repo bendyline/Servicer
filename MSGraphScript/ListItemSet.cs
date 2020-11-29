@@ -210,7 +210,7 @@ namespace BL.Servicer.MSGraph
 
         public List<IItem> GetSortedItems(ItemSetSort sort, String fieldName)
         {
-            return ItemSet.GetSortedItemList(this.Items, sort, fieldName);
+            return ItemSetBase.GetSortedItemList(this.Items, sort, fieldName);
         }
 
         public IItem GetItemById(String id)
@@ -425,7 +425,7 @@ namespace BL.Servicer.MSGraph
             this.isRetrieved = false;
         }
 
-        public void BeginRetrieve(AsyncCallback callback, object state)
+        public void Retrieve(AsyncCallback callback, object state)
         {
             if (this.isRetrieved)
             {
@@ -466,7 +466,7 @@ namespace BL.Servicer.MSGraph
                 wr.OnComplete = new Action(this.EndRetrieve);
 
                 wr.Url = endpoint;
-                wr.RequestType = HttpRequestType.JsonRead;
+                wr.RequestType = HttpRequestType.ODataV4JsonRead;
 
                 wr.Send();
             }

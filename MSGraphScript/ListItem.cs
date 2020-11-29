@@ -253,7 +253,7 @@ namespace BL.Servicer.MSGraph
             }
 
 
-            xhr.RequestType = HttpRequestType.JsonWrite;
+            xhr.RequestType = HttpRequestType.ODataV4JsonWrite;
 
     //            xhr.SetRequestHeader("DataServiceVersion", "DataServiceVersion: 3.0;NetFx");
             xhr.OnReadyStateChange = new Action(this.HandleSaveComplete);

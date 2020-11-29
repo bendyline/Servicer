@@ -58,7 +58,7 @@ namespace BL.Servicer.MSGraph
                 wr.OnComplete = new Action(this.EndCurrentUserGet);
 
                 wr.Url = this.graph.BaseUrl + "v1.0/me/";
-                wr.RequestType = HttpRequestType.JsonRead;
+                wr.RequestType = HttpRequestType.ODataV4JsonRead;
 
                 wr.Send();
             }

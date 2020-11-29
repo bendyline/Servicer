@@ -210,16 +210,8 @@ namespace BL.Servicer.MSGraph
             item.Disconnected = true;
             item.SetCreatedDateTime(Date.Now);
             item.SetModifiedDateTime(item.CreatedDateTime);
-;
+          
             return item;
-        }
-
-        public void Save()
-        {
-            foreach (ListItem ode in this.allItemsSet.Items)
-            {
-                ode.Save(null, null);
-            }
         }
 
         public IDataStoreItemSet EnsureAllItemsSet()
@@ -285,7 +277,7 @@ namespace BL.Servicer.MSGraph
             }
         }
 
-        public void MoveItemSetToNewQuery(ListItemSet odis, Query newQuery)
+        public void MoveItemSetToNewQuery(IDataStoreItemSet odis, Query newQuery)
         {
             String oldQueryString = odis.Query.ToString().ToLowerCase();
 
@@ -295,7 +287,7 @@ namespace BL.Servicer.MSGraph
 
             String newQueryString = newQuery.ToString().ToLowerCase();
 
-            this.itemsByQuery[newQueryString] = odis;
+            this.itemsByQuery[newQueryString] = (ListItemSet)odis;
         }
 
         public IDataStoreItemSet EnsureItemSet(Query query)
@@ -321,9 +313,12 @@ namespace BL.Servicer.MSGraph
             dataSet.SetFromData(data);
         }
 
-        public void BeginUpdate(AsyncCallback callback, object asyncState)
+        public void Save(AsyncCallback callback, object asyncState)
         {
-            ;
+            foreach (ListItem ode in this.allItemsSet.Items)
+            {
+                ode.Save(null, null);
+            }
         }
 
         public void EnsureProvisioned(AsyncCallback callback, object state)
@@ -365,7 +360,7 @@ namespace BL.Servicer.MSGraph
             this.listRetrieveRequest.OnError = new ErrorAction(this.HandleListRetrieveError);
 
             this.listRetrieveRequest.Url = endpoint;
-            this.listRetrieveRequest.RequestType = HttpRequestType.JsonRead;
+            this.listRetrieveRequest.RequestType = HttpRequestType.ODataV4JsonRead;
 
             this.listRetrieveRequest.Send();
         }
@@ -384,7 +379,7 @@ namespace BL.Servicer.MSGraph
                 this.listCreateRequest.OnError = new ErrorAction(this.ListCreateError);
 
                 this.listCreateRequest.Url = this.store.SiteListsRootGraphUrl;
-                this.listCreateRequest.RequestType = HttpRequestType.JsonWrite;
+                this.listCreateRequest.RequestType = HttpRequestType.ODataV4JsonWrite;
 
                 this.listCreateRequest.Verb = "POST";
 
@@ -476,7 +471,7 @@ namespace BL.Servicer.MSGraph
             this.listRetrieveRequest.Source = this;
             this.listRetrieveRequest.OnComplete = new Action(this.EnsureMissingFields);
 
-            this.listRetrieveRequest.RequestType = HttpRequestType.JsonWrite;
+            this.listRetrieveRequest.RequestType = HttpRequestType.ODataV4JsonWrite;
 
         }
 
@@ -486,7 +481,7 @@ namespace BL.Servicer.MSGraph
 
             json += "\"name\":\"" + field.Name + "\",";
             json += "\"id\":\"" + field.Name + "\",";
-            json += "\"displayName\":\"" + field.DisplayName + "\",";
+            json += "\"displayName\":\"" + field.Title + "\",";
 
             switch (field.Type)
             {

@@ -28,19 +28,19 @@ namespace Microsoft.Graph
         /// Gets or sets application.
         /// Optional. The application associated with this action.
         /// </summary>
-        public Identity Application;
+        public IdentityObject Application;
 
         /// <summary>
         /// Gets or sets device.
         /// Optional. The device associated with this action.
         /// </summary>
-        public Identity Device;
+        public IdentityObject Device;
 
         /// <summary>
         /// Gets or sets user.
         /// Optional. The user associated with this action.
         /// </summary>
-        public Identity User;
+        public IdentityObject User;
 
         /// <summary>
         /// Gets or sets additional data.

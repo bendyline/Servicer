@@ -206,7 +206,7 @@ namespace BL.Servicer.MSGraph
         {
             foreach (ItemTypeList e in this.itemTypeLists)
             {
-                e.Save();
+                e.Save(null, null);
             }
         }
     }
